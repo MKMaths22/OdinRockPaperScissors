@@ -1,0 +1,1 @@
+console.log("Peter is a smart cookie for linking external JavaScript");
