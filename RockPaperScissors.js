@@ -4,9 +4,19 @@ function getComputerChoice() {
     return((choiceNum === 0) ? "Rock" : ((choiceNum === 1) ? "Paper" : "Scissors"));
     //so if choiceNum is 0 computer chooses Rock, otherwise if 1 it's Paper, otherwise Scissors
 }
-let i = 1;
-//we will increment i up to 100 to output 100 getComputerChoice values to check it is behaving.
-while (i <= 100) {
-    console.log(getComputerChoice());
-    i += 1;
+
+function getPlayerChoice() {
+    let rawChoice = prompt("Choose Rock, Paper or Scissors!").toLowerCase();
+    //rawChoice must be "rock", "paper", or "scissors" for valid gameplay. Input not case-sensitive.
+    if (rawChoice === "rock") return "Rock";
+    else if (rawChoice === "scissors") return "Scissors";
+    else if (rawChoice === "paper") return "Paper";
+    //input converted to a standard state of first letter only being capitalised
+    else alert("That wasn't acceptable. Please type \"Rock\", \"Paper\" or \"Scissors\".");
+    return null;
+    //null captures all cases of invalid player input
+    
 }
+
+console.log(getPlayerChoice());
+//tests the function
