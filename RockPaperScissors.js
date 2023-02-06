@@ -27,14 +27,22 @@ function getPlayerChoice() {
 function rockPaperScissorsRound(playerSelection,computerSelection) {
     console.log(playerSelection);
     console.log(computerSelection);
+    //testing the input values
     let summary = playerSelection + computerSelection;
+    //a nifty way to test both values consisely, don't you think?
     if (playerSelection === computerSelection)
-    return "Round drawn";
+    {alert(`That round's a draw because the computer also chose ${playerSelection}.`);
+    return "Round drawn";}
+    //the function returns simply the result of the round but the alert message is more descriptive 
     else if ((summary === "RockScissors") || (summary === "ScissorsPaper") || (summary === "PaperRock"))
-    return "Player wins round";
+    {alert(`You win the round because ${playerSelection} beats ${computerSelection}!`);
+    return "Player wins round";}
     else if (playerSelection === null)
-    return "Round void";
+    {alert(`Round voided. Let's try again.`);
+    return "Round void";}
+    alert(`Tough luck, you lost! Computer's ${computerSelection} beats your ${playerSelection}.`)
     return "Computer wins round";
 }
 
 console.log(rockPaperScissorsRound(getPlayerChoice(),getComputerChoice()));
+//combines the above functions to play a round of RPS 
