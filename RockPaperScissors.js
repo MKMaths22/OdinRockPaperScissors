@@ -18,5 +18,23 @@ function getPlayerChoice() {
     
 }
 
-console.log(getPlayerChoice());
-//tests the function
+
+
+
+//this next function will assume that capitalisation has already been dealt with by the getPlayerChoice function,
+//so that the playerSelection is definitely "Rock", "Scissors", "Paper" or null.
+
+function rockPaperScissorsRound(playerSelection,computerSelection) {
+    console.log(playerSelection);
+    console.log(computerSelection);
+    let summary = playerSelection + computerSelection;
+    if (playerSelection === computerSelection)
+    return "Round drawn";
+    else if ((summary === "RockScissors") || (summary === "ScissorsPaper") || (summary === "PaperRock"))
+    return "Player wins round";
+    else if (playerSelection === null)
+    return "Round void";
+    return "Computer wins round";
+}
+
+console.log(rockPaperScissorsRound(getPlayerChoice(),getComputerChoice()));
