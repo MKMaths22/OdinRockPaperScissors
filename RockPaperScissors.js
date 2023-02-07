@@ -86,12 +86,24 @@ function game() {
     if (voidRounds > 2)
     {return `Game voided`;}
     else if (playerScore > computerScore)
-    {return `Congratulations! You won by ${playerScore} rounds to ${computerScore} with ${drawScore} drawn rounds.`;}
+    {return `Congratulations! You won by ${playerScore} round${(playerScore===1)?'':'s'} to ${computerScore} with ${drawScore} drawn round${(drawScore===1)?'':'s'}.`;}
     else if (playerScore < computerScore)
-    {return `Bested by the computer --- you lost by ${computerScore} rounds to ${playerScore} with ${drawScore} drawn rounds.`;}
+    {return `Bested by the computer --- you lost by ${computerScore} round${(computerScore===1)?'':'s'} to ${playerScore} with ${drawScore} drawn round${(drawScore===1)?'':'s'}.`;}
     else
-    {return `It's a draw! You won ${playerScore} rounds and so did the computer, with ${drawScore} drawn rounds.`;}
+    {return `It's a draw! You won ${playerScore} round${(playerScore===1)?'':'s'} and so did the computer, with ${drawScore} drawn round${(drawScore===1)?'':'s'}.`;}
+    //now the word "round" has an "s" added unless the number of them is exactly 1, using the ternary operator
     
 
 }
-console.log(game());
+alert(game());
+
+//let test;
+//test = Math.floor(3*Math.random());
+//console.log(test);
+//let testString = '' + test;
+//console.log(testString);
+//let pluralString = `${(test===1)?'':'s'}`;
+//console.log(`${test} round${pluralString}`);
+//let engString = `${testString} round${((test===1) || 's')}`;
+//console.log(engString);
+ 
