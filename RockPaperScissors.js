@@ -44,9 +44,7 @@ function playRound(playerSelection,computerSelection) {
          {alert(`You win the round because ${playerSelection} beats ${computerSelection}!`);
         return "Player wins round";}
     
-      else if (playerSelection === null)
-        {alert(`Round voided. Let's try again.`);
-        return "Void round";}
+      else
         alert(`Tough luck, you lost! Computer's ${computerSelection} beats your ${playerSelection}.`)
         return "Computer wins round";
 }
@@ -54,34 +52,28 @@ function playRound(playerSelection,computerSelection) {
 //console.log(playRound(getPlayerChoice(),getComputerChoice()));
 //combines the above functions to play a round of RPS 
 
-function game() {
+function game() 
+{
     //create a variable to count the number of the current round
     
-    let roundNumber = 1;
     let playerScore = 0;
     let computerScore = 0;
-    let drawScore = 0;
-    let voidRounds = 0;
     
-    while ((roundNumber <= 5) && (voidRounds < 3)) {
+    while ((playerScore < 5) && (computerScore < 5)) 
+    {
         //now the round takes place, after which, if not voided, the roundNumber increases. So
         //after round 5 when incremented to 6, the while loop will not execute again.
         let roundResult = playRound(getPlayerChoice(),getComputerChoice()).charAt(0);
         //the first character uniquely identifies the result of the round
         
-        switch (roundResult) {
-            case "V":
-            voidRounds += 1;
-            roundNumber -= 1;
-            //the roundNumber decrements to cancel out the increment that happens at the end of the outer while loop
-            break;
-
+        switch (roundResult) 
+        {
+            
             case "C":
             computerScore += 1;
             break;
 
             case "R":
-            drawScore += 1;
             break;
 
             case "P":
@@ -89,25 +81,17 @@ function game() {
             break;
         }
     
-     roundNumber += 1;
-        //increments the round number
+     
     }
     //after all gameplay, the final result is outputted
     
-    if (voidRounds > 2)
-    {return `Game voided`;}
+    if (playerScore === 5) 
+      {return `Congratulations! You won by 5 rounds to ${computerScore}.`};
     
-      else if (playerScore > computerScore)
-      {return `Congratulations! You won by ${playerScore} round${(playerScore===1)?'':'s'} to ${computerScore} with ${drawScore} drawn round${(drawScore===1)?'':'s'}.`;}
-    
-      else if (playerScore < computerScore)
-      {return `Bested by the computer --- you lost by ${computerScore} round${(computerScore===1)?'':'s'} to ${playerScore} with ${drawScore} drawn round${(drawScore===1)?'':'s'}.`;}
-    
-      else
-      {return `It's a draw! You won ${playerScore} round${(playerScore===1)?'':'s'} and so did the computer, with ${drawScore} drawn round${(drawScore===1)?'':'s'}.`;}
-      //the word "round" has an "s" added unless the number of them is exactly 1, using the ternary operator
-    
+    return `Bested by the computer! You lost by 5 rounds to ${playerScore}.`;
 }
+    
+     
 alert(game());
 
 //THIS SECTION SHOWS HOW I TESTED THE TERNARY OPERATOR CODE FOR PLURALS
