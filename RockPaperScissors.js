@@ -1,3 +1,6 @@
+
+
+
 function getComputerChoice() {
     let choiceNum = Math.floor((Math.random())*3);
     //choiceNum equals 0,1,2 with equal probability 
@@ -7,17 +10,7 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let rawChoice = prompt("Choose Rock, Paper or Scissors!").toLowerCase();
-    //rawChoice must be "rock", "paper", or "scissors" for valid gameplay. Input not case-sensitive.
-      
-    if (rawChoice === "rock") return "Rock";
-        else if (rawChoice === "scissors") return "Scissors";
-        else if (rawChoice === "paper") return "Paper";
-    //input converted to a standard state of first letter only being capitalised
-        
-        else alert("That wasn't acceptable. Please type \"Rock\", \"Paper\" or \"Scissors\".");
-        return null;
-    //null captures all cases of invalid player input
+    //outcome needs to be Rock Paper or Scissors based on clicking the buttons
     
 }
 
@@ -28,8 +21,8 @@ function getPlayerChoice() {
 //so that the playerSelection is definitely "Rock", "Scissors", "Paper" or null.
 
 function playRound(playerSelection,computerSelection) {
-    //console.log(playerSelection);
-    //console.log(computerSelection);
+    console.log(playerSelection);
+    console.log(computerSelection);
     //testing the input values
     
     let summary = playerSelection + computerSelection;
