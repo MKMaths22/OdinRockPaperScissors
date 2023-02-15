@@ -7,6 +7,12 @@ buttonScissors.addEventListener('click', () => playRound('Scissors'));
 const buttonPaper = document.querySelector("#Paper");
 buttonPaper.addEventListener('click', () => playRound('Paper'));
 
+let playerScore = 0;
+let computerScore = 0;
+const resultspara = document.querySelector('.resultspara');
+const showPlayerScore = document.querySelector('.playerScore');
+const showComputerScore = document.querySelector('.computerScore');
+
 
 
 function getComputerChoice() {
@@ -33,20 +39,25 @@ function playRound(playerSelection) {
     //a nifty way to test both values concisely, don't you think?
     
     if (playerSelection === computerSelection)
-    {alert(`That round's a draw because the computer also chose ${playerSelection}.`);
+    {resultspara.textContent = `That round's a draw because the computer also chose ${playerSelection}.`;
     return "Round drawn";}
     //the function returns simply the result of the round but the alert message is more descriptive 
       
       else if ((summary === "RockScissors") || (summary === "ScissorsPaper") || (summary === "PaperRock"))
-         {alert(`You win the round because ${playerSelection} beats ${computerSelection}!`);
-        return "Player wins round";}
+         {resultspara.textContent = `You win the round because ${playerSelection} beats ${computerSelection}!`;
+         playerScore += 1;
+         showPlayerScore.textContent = `${playerScore}`;
+         return "Player wins round";}
     
       else
-        alert(`Tough luck, you lost! Computer's ${computerSelection} beats your ${playerSelection}.`)
+        resultspara.textContent = `Tough luck, you lost! Computer's ${computerSelection} beats your ${playerSelection}.`
+        computerScore += 1;
+        showComputerScore.textContent = `${computerScore}`;
         return "Computer wins round";
 }
 
-
+//console.log(playerScore);
+//console.log(computerScore);
 
 
 //console.log(playRound(getPlayerChoice(),getComputerChoice()));
@@ -65,7 +76,7 @@ function game()
     {
         //now the round takes place, after which, if not voided, the roundNumber increases. So
         //after round 5 when incremented to 6, the while loop will not execute again.
-        let roundResult = playRound(getPlayerChoice(),getComputerChoice()).charAt(0);
+        let roundResult = playRound(playerSelection).charAt(0);
         //the first character uniquely identifies the result of the round
         
         switch (roundResult) 
@@ -92,6 +103,7 @@ function game()
     
     return `Bested by the computer! You lost by 5 rounds to ${playerScore}.`;
 }
+
     
      
 //alert(game());

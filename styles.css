@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -20,4 +25,42 @@ body {
 
 .onebutton {
     width: 120px;
+}
+
+.resultsdiv {
+    width: min(50%,700px);
+    background-color: #a9ac04;
+    height: 150px;
+    margin-top: 10vh;
+    text-align: center;
+    font-family: Verdana, 'Times New Roman';
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scorediv {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.playerdiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}
+
+.computerdiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
 }
