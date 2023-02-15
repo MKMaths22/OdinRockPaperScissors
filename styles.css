@@ -70,7 +70,7 @@ h2 {
     height: 150px;
     background-color: grey;
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 }
 
@@ -81,5 +81,9 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.finalscorepara {
+    text-align: center;
 }
 

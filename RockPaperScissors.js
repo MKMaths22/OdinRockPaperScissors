@@ -7,12 +7,28 @@ buttonScissors.addEventListener('click', () => playRound('Scissors'));
 const buttonPaper = document.querySelector("#Paper");
 buttonPaper.addEventListener('click', () => playRound('Paper'));
 
+const resetButton = document.querySelector('.resetbutton');
+resetButton.addEventListener('click', () => resetScores());
+
+function resetScores() {
+    playerScore = 0;
+    computerScore = 0;
+    finalScorePara.textContent = 'New Game: Choose Rock, Paper or Scissors';
+    showPlayerScore.textContent = '0';
+    showComputerScore.textContent = '0';
+    resultsPara.textContent = '';
+}
+
+
+
 let playerScore = 0;
 let computerScore = 0;
-const resultspara = document.querySelector('.resultspara');
+const resultsPara = document.querySelector('.resultspara');
 const showPlayerScore = document.querySelector('.playerScore');
 const showComputerScore = document.querySelector('.computerScore');
+const finalScorePara = document.querySelector('.finalscorepara');
 
+//finalScorePara.textContent = 'I changed the text here';
 
 
 function getComputerChoice() {
@@ -30,6 +46,9 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection) {
+    if ((playerScore === 5) || (computerScore === 5))
+    return null;
+
     let computerSelection = getComputerChoice();
     //testing the input values
     
@@ -37,26 +56,38 @@ function playRound(playerSelection) {
     //a nifty way to test both values concisely, don't you think?
     
     if (playerSelection === computerSelection)
-    {resultspara.textContent = `That round's a draw because the computer also chose ${playerSelection}.`;
+    {resultsPara.textContent = `That round's a draw because the computer also chose ${playerSelection}.`;
     return "Round drawn";}
     //the function returns simply the result of the round but the alert message is more descriptive 
       
       else if ((summary === "RockScissors") || (summary === "ScissorsPaper") || (summary === "PaperRock"))
-         {resultspara.textContent = `You win the round because ${playerSelection} beats ${computerSelection}!`;
+         {resultsPara.textContent = `You win the round because ${playerSelection} beats ${computerSelection}!`;
          playerScore += 1;
          showPlayerScore.textContent = `${playerScore}`;
-         return "Player wins round";}
+          if (playerScore === 5)
+           playerWins(computerScore);
+        return "Player wins round";}
     
       else
-        resultspara.textContent = `Tough luck, you lost! Computer's ${computerSelection} beats your ${playerSelection}.`
+        resultsPara.textContent = `Tough luck, you lost! Computer's ${computerSelection} beats your ${playerSelection}.`
         computerScore += 1;
         showComputerScore.textContent = `${computerScore}`;
+          if (computerScore === 5)
+           computerWins(playerScore);
         return "Computer wins round";
 }
+  
+    function playerWins(cScore) {
+        finalScorePara.textContent = `Congratulations! You win by 5 rounds to ${cScore}!`;
+        
+    }
 
- //if (playerScore === 5)
+    function computerWins(pScore) {
+        finalScorePara.textContent = `Oh dear... You lost a silly game to a machine by 5 rounds to ${pScore}!`;
+        
+    }
      
- //if (computerScore === 5)
+ 
 
 //console.log(playerScore);
 //console.log(computerScore);
