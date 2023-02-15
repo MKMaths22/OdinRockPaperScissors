@@ -1,3 +1,11 @@
+const buttonRock = document.querySelector("#Rock");
+buttonRock.addEventListener('click', () => playRound('Rock'));
+
+const buttonScissors = document.querySelector("#Scissors");
+buttonScissors.addEventListener('click', () => playRound('Scissors'));
+
+const buttonPaper = document.querySelector("#Paper");
+buttonPaper.addEventListener('click', () => playRound('Paper'));
 
 
 
@@ -9,18 +17,14 @@ function getComputerChoice() {
     //so if choiceNum is 0 computer chooses Rock, otherwise if 1 it's Paper, otherwise Scissors
 }
 
-function getPlayerChoice() {
-    //outcome needs to be Rock Paper or Scissors based on clicking the buttons
-    
-}
-
-
-
 
 //this next function will assume that capitalisation has already been dealt with by the getPlayerChoice function,
 //so that the playerSelection is definitely "Rock", "Scissors", "Paper" or null.
 
-function playRound(playerSelection,computerSelection) {
+
+
+function playRound(playerSelection) {
+    let computerSelection = getComputerChoice();
     console.log(playerSelection);
     console.log(computerSelection);
     //testing the input values
@@ -42,8 +46,13 @@ function playRound(playerSelection,computerSelection) {
         return "Computer wins round";
 }
 
+
+
+
 //console.log(playRound(getPlayerChoice(),getComputerChoice()));
 //combines the above functions to play a round of RPS 
+
+//console.log(playRound('Rock'));
 
 function game() 
 {
@@ -85,7 +94,7 @@ function game()
 }
     
      
-alert(game());
+//alert(game());
 
 //THIS SECTION SHOWS HOW I TESTED THE TERNARY OPERATOR CODE FOR PLURALS
 //let test;
