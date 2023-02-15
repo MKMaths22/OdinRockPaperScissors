@@ -31,8 +31,6 @@ function getComputerChoice() {
 
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
-    console.log(playerSelection);
-    console.log(computerSelection);
     //testing the input values
     
     let summary = playerSelection + computerSelection;
@@ -55,6 +53,10 @@ function playRound(playerSelection) {
         showComputerScore.textContent = `${computerScore}`;
         return "Computer wins round";
 }
+
+ //if (playerScore === 5)
+     
+ //if (computerScore === 5)
 
 //console.log(playerScore);
 //console.log(computerScore);

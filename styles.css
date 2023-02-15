@@ -64,3 +64,22 @@ body {
 h2 {
     text-align: center;
 }
+
+.finalscore {
+    width: min(50%,700px);
+    height: 150px;
+    background-color: grey;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.resetdiv {
+    width: 200px;
+    height: 100px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
