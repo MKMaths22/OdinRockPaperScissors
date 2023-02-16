@@ -7,7 +7,7 @@ buttonScissors.addEventListener('click', () => playRound('Scissors'));
 const buttonPaper = document.querySelector("#Paper");
 buttonPaper.addEventListener('click', () => playRound('Paper'));
 
-const resetButton = document.querySelector('.resetbutton');
+const resetButton = document.querySelector('#reset');
 resetButton.addEventListener('click', () => resetScores());
 
 function resetScores() {
@@ -48,6 +48,8 @@ function getComputerChoice() {
 function playRound(playerSelection) {
     if ((playerScore === 5) || (computerScore === 5))
     return null;
+
+    finalScorePara.textContent = '';
 
     let computerSelection = getComputerChoice();
     //testing the input values
