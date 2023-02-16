@@ -6,3 +6,6 @@ As of 14/02/23 I have created the branch rps-ui to make the User Interface witho
 Rock image from Pixabay.
 
 Scissors image from Pixabay, by George Piskov.
+
+Paper image from Pixabay, by Dulce Espinoza. 
+

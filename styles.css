@@ -43,6 +43,13 @@ body {
     bottom: 12px;
 }
 
+#Paperpic {
+    width: 130%;
+    height: auto;
+    position: relative;
+    right: 20px;
+}
+
 .buttons {
     display: flex;
     gap: 20px;
@@ -84,6 +91,8 @@ body {
 .resultsdiv {
     width: max(min(50%,700px),400px);
     background-color: rgb(191, 221, 108);
+    border: 6px solid black;
+    border-radius: 7%;
     height: 150px;
     margin-top: 7vh;
     text-align: center;
