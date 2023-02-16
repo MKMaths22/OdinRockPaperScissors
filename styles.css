@@ -3,10 +3,37 @@
     padding: 0;
 }
 
+html {
+    background: linear-gradient(90deg,grey,rgb(143, 138, 64));
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.picbutton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.pic {
+    height: 100px;
+    width: 130px;
+    overflow: hidden;
+    border: 5px solid black;
+    border-radius: 10%;
+}
+
+#Rockpic {
+    width: auto;
+    height: 110px;
+    position: relative;
+    right: 15px;
 }
 
 .buttons {
@@ -30,22 +57,24 @@ body {
 .roundresultdiv {
     height: 150px;
     width: max(min(50%,700px),400px);
-    background-color: grey;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: -50px;
 }
 
 .resultspara, .finalscorepara {
     text-align: center;
     font-family: Verdana, 'Times New Roman';
     font-size: 30px;
+    color:rgb(6, 23, 31);
 }
 
 .resultsdiv {
     width: max(min(50%,700px),400px);
-    background-color: #a9ac04;
+    background-color: rgb(191, 221, 108);
     height: 150px;
     margin-top: 10vh;
     text-align: center;
@@ -83,17 +112,8 @@ h2 {
 
 .finalscore {
     width: max(min(50%,700px),400px);
-    height: 150px;
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.resetdiv {
-    width: 200px;
-    height: 100px;
-    background-color: green;
+    height: 200px;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -105,5 +125,9 @@ h2 {
 
 #reset {
     margin-top: 30px;
+}
+
+#computername {
+    padding-right: 5px;
 }
 
