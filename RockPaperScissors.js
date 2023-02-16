@@ -13,7 +13,7 @@ resetButton.addEventListener('click', () => resetScores());
 function resetScores() {
     playerScore = 0;
     computerScore = 0;
-    finalScorePara.textContent = 'New Game: Choose Rock, Paper or Scissors';
+    finalScorePara.textContent = 'New Game: Choose Rock, Paper or Scissors.';
     showPlayerScore.textContent = '0';
     showComputerScore.textContent = '0';
     resultsPara.textContent = '';
